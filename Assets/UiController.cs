@@ -1,32 +1,32 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UiController : MonoBehaviour
+public  class UiController : MonoBehaviour
 {
-    [SerializeField] GameObject _ui;
-    
-    private UIDocument _document;
+   
+    private UIDocument _document => GetComponent<UIDocument>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        var a = Instantiate(_ui);
-
-        _document = a.GetComponent<UIDocument>();
-
-        var element = _document.rootVisualElement.Q<Button>("Buttun");
-
-        element.clicked += () =>
+        var listElements = new VisualElement[]
         {
-            Debug.Log("click");
-            var labelelement = _document.rootVisualElement.Q<Label>("Label");
-            labelelement.text = "click";
-            
+           new Label("Hello"),
+           new Label("hello"),
+           new Button() {text = "hello world"}
         };
+
+        ListView listView = _document.rootVisualElement.Q<ListView>("List1");
+        listView.SetListContent(listElements);
+        listView.fixedItemHeight = 50;
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+   
 }
+
+

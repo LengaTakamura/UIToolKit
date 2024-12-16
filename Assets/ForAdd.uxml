@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="Base" style="flex-grow: 1;">
+        <engine:VisualElement name="Container1" style="flex-grow: 1;" />
+        <engine:Label text="Label" name="Label1" style="color: rgb(209, 31, 31); -unity-text-align: upper-center; font-size: 93px;" />
+    </engine:VisualElement>
+</engine:UXML>
